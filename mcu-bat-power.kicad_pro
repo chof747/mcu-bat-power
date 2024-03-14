@@ -56,13 +56,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        "footprint_type_mismatch|60579000|105511600|09e565e5-7e62-4325-b600-ffe7acb3f711|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_issues|60182013|75430423|d69be3e6-6c70-4151-9853-df8ea9bc1ca0|00000000-0000-0000-0000-000000000000",
-        "unconnected_items|74675000|145765000|9d6f993b-5414-4d95-9783-45db906b6c4f|3569a014-af15-40ed-8e08-0e9e7c106c0e",
-        "unconnected_items|79525000|145765000|1108c540-d681-4e5a-89d4-cf84bd9fc33f|9d6f993b-5414-4d95-9783-45db906b6c4f",
-        "unconnected_items|80700000|148415000|f775f873-5750-4989-9e42-9c30b14a8d07|1108c540-d681-4e5a-89d4-cf84bd9fc33f"
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -181,7 +175,9 @@
         }
       ],
       "track_widths": [
-        0.0
+        0.0,
+        0.0,
+        0.13
       ],
       "via_dimensions": [
         {
@@ -191,6 +187,13 @@
       ],
       "zones_allow_external_fillets": false,
       "zones_use_no_outline": true
+    },
+    "ipc2581": {
+      "dist": "",
+      "distpn": "",
+      "internal_id": "",
+      "mfg": "",
+      "mpn": ""
     },
     "layer_presets": [],
     "viewports": []
@@ -500,6 +503,14 @@
       {
         "netclass": "Power",
         "pattern": "/boosted"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "VBAT_MESSURED"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "VBAT_M"
       }
     ]
   },
@@ -508,8 +519,11 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
+      "plot": "",
+      "pos_files": "",
       "specctra_dsn": "",
       "step": "",
+      "svg": "",
       "vrml": ""
     },
     "page_layout_descr_file": ""

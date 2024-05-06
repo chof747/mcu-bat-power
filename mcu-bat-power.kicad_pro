@@ -552,7 +552,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "docs/",
+      "plot": "production/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
@@ -672,7 +672,7 @@
   "sheets": [
     [
       "e8426e51-e5a9-4642-8277-6d3f50e0e523",
-      ""
+      "Root"
     ]
   ],
   "text_variables": {}

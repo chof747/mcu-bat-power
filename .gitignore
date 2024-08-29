@@ -4,6 +4,7 @@
 fp-info-cache
 \#auto_saved_files#
 _autosave-*
+*.lck
 
 #PCB Production and JLCPCB specific files
 jlcpcb/gerber

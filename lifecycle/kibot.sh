@@ -18,7 +18,7 @@ fi
 
 # Load .env file
 if [ -f "$ENV_FILE" ]; then
-  source "$ENV_FILE"
+  . "$ENV_FILE"
 else
   echo ".env file not found at $ENV_FILE"
   exit 1
@@ -31,18 +31,18 @@ export WORKDIR=$(pwd)
 export SUBDIR=
 export OUTPUTDIR=production
 
-echo $LOCAL_KICADCONFIG
-mkdir -p $WORKDIR/$OUTPUTDIR
+mkdir -p "$WORKDIR/$OUTPUTDIR"
 
-docker run --rm -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY \
-    -v $WORKDIR:/home/$USER/workdir \
-    --user $USER_ID:$GROUP_ID \
+docker run --rm -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY="$DISPLAY" \
+    -v "$WORKDIR:/home/$USER/workdir" \
+    --user "$USER_ID:$GROUP_ID" \
     --workdir="/home/$USER/" \
     --volume="$LOCAL_KICADCONFIG:/home/$USER/.config/kicad:rw" \
     --volume="$HOME/.local/share:/home/$USER/.local/share:rw" \
     --volume="$HOME/.cache:/.cache:rw" \
     --env XDG_DATA_HOME=/home/$USER/.local/share \
     --env KICAD_CONFIG_HOME=/home/$USER/.config/kicad \
-    --env USERMODELS=/home/$USER/.config/kicad/$USERMODEL_SUBDIR \
+    --env USERMODELS=/home/$USER/.config/kicad/"$USERMODEL_SUBDIR" \
     --env KICAD8_3DMODEL_DIR=/kicad/3dmodels \
-    ghcr.io/inti-cmnb/kicad8_auto:latest /bin/bash -c " cd workdir/$SUBDIR ; kibot -c /home/$USER/workdir/lifecycle/config-kibot.yaml -d /home/$USER/workdir/$OUTPUTDIR"
+    ghcr.io/inti-cmnb/kicad8_auto:latest /bin/bash -c "cd workdir/$SUBDIR; kibot -c /home/$USER/workdir/lifecycle/config-kibot.yaml -d /home/$USER/workdir/$OUTPUTDIR"
+    
